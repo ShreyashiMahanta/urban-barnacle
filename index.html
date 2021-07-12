@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        <title>Bowling VR</title>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>   
+        <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+        <script src = ./roll.js></script>
+    </head>
+
+    <body>
+        <a-scene id  = "scene">
+
+            <a-assets>
+                <a-asset-item id = "bowling_pins" src = "assets/bowling_pin/scene.gltf"></a-asset-item>
+                <a-asset-item id = "bowling_ball" src = "./assets/bowling_ball/scene.gltf"></a-asset-item>
+                <a-asset-item id = "bowling_alley" src = "./assets/bowling_alley/scene.gltf"></a-asset-item>
+
+            </a-assets>
+
+            <a-entity
+            id="camera"
+            wasd-controls
+            position="0 1.1 0">
+            </a-entity>
+
+            <a-entity roll-ball></a-entity>
+            <!--pins-->
+            <a-entity id  = "pin1" gltf-model="#bowling_pins" scale = "0.002 0.002 0.002" position = "0 1.34 -0.689" dynamic-body="mass:0.5"></a-entity>
+            <a-entity id  = "pin2" gltf-model="#bowling_pins" scale = "0.002 0.002 0.002" position = "0.030 1.34 -0.699" dynamic-body="mass:0.5"></a-entity>
+            <a-entity id  = "pin1" gltf-model="#bowling_pins" scale = "0.002 0.002 0.002" position = "-0.030 1.34 -0.699" dynamic-body="mass:0.5"></a-entity>
+            <a-entity id  = "pin1" gltf-model="#bowling_pins" scale = "0.002 0.002 0.002" position = "0.060 1.34 -0.710" dynamic-body="mass:0.5"></a-entity>
+            <a-entity id  = "pin1" gltf-model="#bowling_pins" scale = "0.002 0.002 0.002" position = "-0.060 1.34 -0.710" dynamic-body="mass:0.5"></a-entity>
+
+            <a-plane
+            id="ground"
+            position="0 1.343 -20"
+            rotation="-90 0 0"
+            height="100"
+            width="20"
+            color="pink"
+            static-body
+            visible="true"
+          >
+          </a-plane>
+
+       
+
+
+          
+        </a-scene>
+    </body>
+
+</html>
+
+<!--
+            <a-entity id = "ball" gltf-model="#bowling_ball"  bowling-balls position = "0 1.34 -0.476" scale = "0.014 0.014 0.014"></a-entity>
+                        <a-sky color = "#868B8E" gltf-model="#bowling_alley" position="0 1.5 0" scale = "1 2.210 0.740" static-body></a-sky>
+
+
+-->
